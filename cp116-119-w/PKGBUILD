@@ -1,0 +1,14 @@
+# Maintainer: Gavin Lam <me@gavin.hk>
+pkgname=fx-docuprint-cp116-119-w
+pkgver=1
+pkgrel=1
+pkgdesc="Printer driver for Fuji Xerox DocuPrint CP116/119 W"
+arch=('x86_64')
+url="https://gavin.hk"
+license=('custom')
+source=("$pkgname-$pkgver.rpm")
+md5sums=('d61374baf9d2f6076563c0993c3d2d39')
+
+package() {
+  rsync -ruDq $srcdir/usr $pkgdir
+}
