@@ -2,13 +2,14 @@
 pkgname=fx-docuprint-cp115-118-w
 pkgver=1
 pkgrel=1
-pkgdesc="Printer driver for Fuji Xerox DocuPrint CP115/118 W"
+pkgdesc='Printer driver for Fuji Xerox DocuPrint CP115/118 W'
 arch=('x86_64')
-url="https://gavin.hk"
+url='https://gitlab.com/gavinkflam/fx-docuprint'
 license=('custom')
-source=("$pkgname-$pkgver.rpm")
+source=("${pkgname}-${pkgver}.rpm")
 md5sums=('5456481a40496dc4a8b8eba311bb549c')
 
 package() {
-  rsync -ruDq $srcdir/usr $pkgdir
+  mkdir -p ${pkgdif}/usr
+  cp -a $srcdir/usr/. $pkgdir/usr
 }
